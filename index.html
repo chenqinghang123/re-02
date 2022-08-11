@@ -109,12 +109,19 @@
         shurukuang.style.borderBottomColor = "#fff";
         shurukuang.value = "";
         shurukuang.readOnly = false;
+        window.localStorage.removeItem('shi')
       } else {
         kai = true;
         anniu.innerText = "❌";
         shurukuang.style.borderBlockColor = "transparent";
         shurukuang.readOnly = true;
+        window.localStorage.setItem("shi",shurukuang.value);
       }
+    }
+    let data = window.localStorage.getItem("shi");
+    if (data) {
+      document.getElementById("shurukuang").value = data;
+      change();
     }
   </script>
 </body>
