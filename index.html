@@ -9,7 +9,6 @@
     * {
       margin: 0;
     }
-
     .flex1 {
       width: 100%;
       height: 100px;
@@ -42,8 +41,26 @@
     ul>li:hover {
       color: aqua;
     }
-
-
+    .container {
+      position: relative;
+      /* opacity: 0.5; */
+    }
+    #acd {
+     position: absolute;
+     top: 45%;
+    left: 40%;
+    }
+  #acd input {
+      /* position: absolute; */
+      width: 80%;
+      height:40px;
+      border: none;
+      text-align: center;
+      outline: none;
+      padding: 4px 0;
+      font-size: 30px;
+      background: inherit;
+    }
     .floo {
       width: 100%;
 
@@ -55,7 +72,7 @@
   <!-- 头部栏 -->
   <div class="flex1">
     <div class="flex2">
-      <img src="./149.jpg" alt="头像" style="width:80px;border-radius: 50%;margin: 10px;" />
+      <img src="./image/149.jpg" alt="头像" style="width:80px;border-radius: 50%;margin: 10px;" />
       <ul class="flex3">
         <li>简介</li>
         <li>无心</li>
@@ -63,20 +80,43 @@
       </ul>
     </div>
   </div>
-  <!-- 视频 -->
-  <div class="container">
-    <img src="./156.jpg" alt="图片" style="width: 100%;height:100%;">
+  <!-- 图片 -->
+  <div class="container" >
+    <img src="./image/156.jpg" alt="图片" style="width: 100%;height:100%;">
+    <div id="acd">
+      <input placeholder="最重要的事情?" id="shurukuang">
+      <span id="anniu" onclick="btn()" style="font-size: 30px; color: palevioletred; cursor: pointer;">✔</span>
+    </div>
   </div>
-  </div>
+  
 
   <!-- 页脚 -->
   <div class="floo">
     <div class="yewei" style="width: 200px;height:200px; margin: auto;">
-      <img src="./10wmt-articleLarge-v4.webp" alt="" style="width: 100%;height: 150px;">
-
+      <img src="./image/10wmt-articleLarge-v4.webp" alt="" style="width: 100%;height: 150px;">
     </div>
     <p style="text-align: center;"><a href="https://www.midorg.com/">友情链接</a></p>
   </div>
+  <script>
+    let kai = false;
+    function btn() {
+      let shurukuang = document.getElementById('shurukuang');
+      let anniu = document.getElementById('anniu');
+
+      if (kai) {
+        kai = false;
+        anniu.innerText = "✔";
+        shurukuang.style.borderBottomColor = "#fff";
+        shurukuang.value = "";
+        shurukuang.readOnly = false;
+      } else {
+        kai = true;
+        anniu.innerText = "❌";
+        shurukuang.style.borderBlockColor = "transparent";
+        shurukuang.readOnly = true;
+      }
+    }
+  </script>
 </body>
 
 </html>
